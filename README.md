@@ -1,21 +1,29 @@
-# a-hard-vue-vuex
+# 前言
 
-> A Vue.js project
+> 一个用来便于自己学习和掌握vue开发的复杂项目，参照一个git上的vue2-elm项目。仅仅作为自己学习和理解
 
-## Build Setup
+## 技术栈
+
+vue2 + vuex + vue-router + webpack + ES6/7 + fetch + sass + flex + svg
+
+## 项目运行
 
 ``` bash
-# install dependencies
+# 克隆到本地
+git clone https://github.com/Bxiaoyao/a-hard-vue-vuex.git
+
+# 进入文件夹
+cd a-hard-vue-vuex
+
+# 安装依赖
 npm install
 
-# serve with hot reload at localhost:8080
+# 开启本地服务器
 npm run dev
 
-# build for production with minification
+# 发布环境
 npm run build
 
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
