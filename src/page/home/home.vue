@@ -29,6 +29,13 @@
   }
 </script>
 
-<style type="text/css">
-  
+<style lang="scss" scoped>
+  @import '../../style/mixin';
+  .head_logo{
+    left: 0.5rem;
+    font-weight: 400;
+    @include sc(0.7rem, #fff);
+    @include wh(2.3rem, 0.7rem);
+    @include ct;
+  }
 </style>

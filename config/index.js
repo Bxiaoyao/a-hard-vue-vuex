@@ -6,7 +6,9 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
+    env: {
+      NODE_ENV: '"development"'
+    },
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
@@ -20,13 +22,28 @@ module.exports = {
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
-    
+    // context: [ // 代理路径
+    //   '/shopping',
+    //   '/ugc',
+    //   '/v1',
+    //   '/v2',
+    //   '/v3',
+    //   '/v4',
+    //   '/bos',
+    //   '/member',
+    //   '/promotion',
+    //   '/eus',
+    //   '/payapi',
+    //   '/img'
+    // ],
+    // proxypath: 'http://cangdu.org:8001',
+
     /**
      * Source Maps
      */
 
     // https://webpack.js.org/configuration/devtool/#development
-    devtool: 'cheap-module-eval-source-map',
+    // devtool: 'cheap-module-eval-source-map',
 
     // If you have problems debugging vue-files in devtools,
     // set this to false - it *may* help
