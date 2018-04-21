@@ -6,6 +6,7 @@ import App from '@/App'
 Vue.use(Router)
 
 const home = r => require.ensure([], () => r(require('../page/home/home')), 'home')
+const login = r => require.ensure([], () => r(require('../page/login/login')), 'login')
 
 export default new Router({
   routes: [
@@ -21,6 +22,10 @@ export default new Router({
         {
           path: '/home',
           component: home
+        },
+        {//登录注册页
+          path: '/login',
+          component: login
         }
       ]
     }
