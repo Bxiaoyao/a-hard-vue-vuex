@@ -68,6 +68,7 @@
 				captchaCodeImg: null, //验证码地址
 				showAlert: null, //显示提示组件
 				alertText: null, //提示的内容
+				usreInfo: null, //获取到的用户信息
 			}
 		},
 		created(){
@@ -91,7 +92,7 @@
 				this.loginWay = !this.loginWay
 			},
 			changePassWordType() {//是否显示密码
-
+				this.showPassword = !this.showPassword
 			},
 			async getVerifyCode(){//获取短信验证码
 				if(this.rightRhoneNumber){

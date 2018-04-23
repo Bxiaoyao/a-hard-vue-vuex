@@ -7,6 +7,7 @@ Vue.use(Router)
 
 const home = r => require.ensure([], () => r(require('../page/home/home')), 'home')
 const login = r => require.ensure([], () => r(require('../page/login/login')), 'login')
+const forget = r => require.ensure([], () => r(require('../page/forget/forget')), 'forget')
 
 export default new Router({
   routes: [
@@ -26,6 +27,10 @@ export default new Router({
         {//登录注册页
           path: '/login',
           component: login
+        },
+        {//修改密码页
+          path: '/forget',
+          component: forget
         }
       ]
     }

@@ -45,3 +45,14 @@ export const accountLogin = (username, password, captcha_code) => fetch('/apis/v
   password,
   captcha_code
 }, 'POST')
+
+/**
+ * 修改密码
+ */
+export const changePassword = (username, oldpassWord, newpassword, confirmpassword, captcha_code) => fetch('/apis/v2/changepassword', {
+  username,
+  oldpassWord,
+  newpassword,
+  confirmpassword,
+  captcha_code
+}, 'POST')
