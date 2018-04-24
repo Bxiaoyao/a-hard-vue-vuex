@@ -1,4 +1,5 @@
 $blue: #3190e8;
+$bc: #e4e4e4;
 
 //定位上下左右居中
 @mixin center {
@@ -28,4 +29,13 @@ $blue: #3190e8;
 @mixin sc($size, $color){
   font-size: $size;
   color: $color;
+}
+//flex布局和子元素对其方式
+@mixin fj($type: space-between){
+  display: flex;
+  justify-content: $type;
+}
+//字体大小，行高，颜色
+@mixin font($size, $line-height, $family: 'Microsoft YaHei'){
+  font: #{$size}/#{$line-height} $family;
 }

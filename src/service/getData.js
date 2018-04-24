@@ -56,3 +56,17 @@ export const changePassword = (username, oldpassWord, newpassword, confirmpasswo
   confirmpassword,
   captcha_code
 }, 'POST')
+
+/**
+ * 获取首页默认地址
+ */
+ export const cityGuess = () => fetch('/apis/v1/cities', {
+  type: 'guess'
+})
+
+ /**
+ * 获取首页热门城市
+ */
+ export const hotcity = () => fetch('/apis/v1/cities', {
+  type: 'hot'
+})
