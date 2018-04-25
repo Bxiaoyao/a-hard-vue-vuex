@@ -8,6 +8,7 @@ Vue.use(Router)
 const home = r => require.ensure([], () => r(require('../page/home/home')), 'home')
 const login = r => require.ensure([], () => r(require('../page/login/login')), 'login')
 const forget = r => require.ensure([], () => r(require('../page/forget/forget')), 'forget')
+const city = r => require.ensure([], () => r(require('../page/city/city')), 'city')
 
 export default new Router({
   routes: [
@@ -24,13 +25,17 @@ export default new Router({
           path: '/home',
           component: home
         },
-        {//登录注册页
+        {// 登录注册页
           path: '/login',
           component: login
         },
-        {//修改密码页
+        {// 修改密码页
           path: '/forget',
           component: forget
+        },
+        {// 当前选择城市页
+          path: '/city/:cityid',
+          component: city
         }
       ]
     }

@@ -21,3 +21,12 @@ html,body{
     width: 100%;
     background-color: #F5F5F5;
 }
+
+.clear{
+    zoom: 1;
+}
+.clear:after{
+    content: '';
+    display: block;
+    clear: both;
+}

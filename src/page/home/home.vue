@@ -1,14 +1,14 @@
 <template>
   <div>
     <head-top signin-up='home'>
-      <span slot='logo' class="head_logo">ele.me</span>
+      <span slot='logo' class="head_logo" @click="reload">ele.me</span>
     </head-top>
     <nav class="city_nav">
       <div class="city_tip">
         <span>当前定位城市：</span>
         <span>定位不准时，请在城市列表中选择</span>
       </div>
-      <router-link :to="'/city'+guessCityid" class="guess_city">
+      <router-link :to="'/city/'+guessCityid" class="guess_city">
         <span>{{guessCity}}</span>
         <svg class="arrow_right">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-right"></use>
@@ -23,18 +23,33 @@
         </router-link>
       </ul>
     </section>
+    <section class="group_city_container">
+      <ul class="letter_classify">
+        <li v-for="(value, key, index) in sortgroupcity" :key="key" class="letter_classify_li">
+          <h4 class="city_title">{{key}}
+            <span v-if="index == 0">(按字母排序)</span>
+          </h4>
+          <ul class="groupcity_name_container citylistul clear">
+            <router-link tag="li" v-for="item in value" :to="'/city/' + item.id" :key="item.id" class="ellipsis">
+              {{item.name}}
+            </router-link>
+          </ul>
+        </li>
+      </ul>
+    </section>
   </div>
 </template>
 
 <script>
   import headTop from '../../components/header/head'
-  import {cityGuess, hotcity} from '../../service/getData'
+  import {cityGuess, hotcity, groupcity} from '../../service/getData'
   export default {
     data(){
       return {
         guessCity: '', //当前城市
         guessCityid: '', //当前城市id
         hotcity: [], //热门城市列表
+        groupcity: {}, //所有城市列表
       }
     },
     mounted() {
@@ -46,17 +61,32 @@
 
       //获取热门城市
       hotcity().then(res => {
-        this.hotcity = res;
+        this.hotcity = res
+      }),
+
+      //获取所有城市
+      groupcity().then(res => {
+        this.groupcity = res
       })
     },
     components:{
       headTop
     },
     computed: {
-
+      sortgroupcity(){//将获取的数据按A-Z字母开头排序
+        let sortobj = {}
+        for(let i= 65; i <= 90; i++){
+          if (this.groupcity[String.fromCharCode(i)]) {
+            sortobj[String.fromCharCode(i)] = this.groupcity[String.fromCharCode(i)];
+          }
+        }
+        return sortobj
+      }
     },
     methods: {
-      
+      reload() {//点击图标刷新页面
+        window.location.reload()
+      }
     }
   }
 </script>
@@ -129,5 +159,18 @@
     border-top: 2px solid $bc;
     border-bottom: 1px solid $bc;
     @include font(0.55rem, 1.45rem, "Helvetica Neue");
+    span{
+      @include sc(0.475rem, #999);
+    }
+  }
+  .letter_classify_li{
+    margin-bottom: 0.4rem;
+    background-color: #fff;
+    border-bottom: 1px solid $bc;
+    .groupcity_name_container{
+      li{
+        color: #666;
+      }
+    }
   }
 </style>
