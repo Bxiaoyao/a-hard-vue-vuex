@@ -82,3 +82,12 @@ export const groupcity = () => fetch('/apis/v1/cities', {
   * 获取当前所在城市
   */
 export const currentcity = number => fetch('/apis/v1/cities/' + number)
+
+/**
+ * 获取搜索地址
+ */
+export const searchplace = (cityid, value) => fetch('/apis/v1/pois', {
+  type: 'search',
+  city_id: cityid,
+  keyword: value
+})

@@ -30,3 +30,9 @@ html,body{
     display: block;
     clear: both;
 }
+
+.ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

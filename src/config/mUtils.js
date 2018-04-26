@@ -20,3 +20,13 @@ export const getStore = name => {
   }
   return window.localStorage.getItem(name)
 }
+
+/**
+ * 删除localStorage
+ */
+export const removeStore = name => {
+  if (!name) {
+    return
+  }
+  window.localStorage.removeItem(name)
+}
