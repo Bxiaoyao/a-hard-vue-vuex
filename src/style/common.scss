@@ -36,3 +36,14 @@ html,body{
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+@keyframes backOpacity{
+    0%  {opacity: 1}
+    25% {opacity: .5}
+    50% {opacity: 1}
+    75% {opacity: .5}
+    100%    {opacity: 1}
+}
+.animation_opacity{
+    animation: backOpacity 2s ease-in-out infinite;
+}
