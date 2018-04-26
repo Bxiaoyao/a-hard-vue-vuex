@@ -91,3 +91,8 @@ export const searchplace = (cityid, value) => fetch('/apis/v1/pois', {
   city_id: cityid,
   keyword: value
 })
+
+/**
+ * 获取msite页面食品分类列表
+ */
+export const msiteAddress = geohash => fetch('/apis/v2/pois/' + geohash)
