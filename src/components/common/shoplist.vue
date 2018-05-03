@@ -148,7 +148,10 @@
           zhunStatus = false
         }
         return zhunStatus
-      } 
+      },
+      backTop() {//返回顶部
+        animate(document.body, {scrollTop: '0'}, 400, 'ease-out')
+      }
     },
     watch: {
 
@@ -284,5 +287,13 @@
     @include sc(0.5rem, #666);
     text-align: center;
     line-height: 2rem;
+  }
+  .return_top{
+    position: fixed;
+    bottom: 3rem;
+    right: 1rem;
+    .back_top_svg{
+      @include wh(2rem, 2rem);
+    }
   }
 </style>
