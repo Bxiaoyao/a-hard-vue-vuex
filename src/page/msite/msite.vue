@@ -145,6 +145,9 @@
     .swiper-container{
       @include wh(100%, auto);
       padding-bottom: 0.6rem;
+      .swiper-pagination{
+        bottom: 0.2rem;
+      }
     }
     .fl_back{
       @include wh(100%, 100%);

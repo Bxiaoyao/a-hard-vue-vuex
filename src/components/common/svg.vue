@@ -18,6 +18,19 @@
           </path>
         </g>
       </symbol>
+      <symbol id="star" viewBox="0 0 32 32">
+        <path class="path1" d="M16 26.382l-8.16 4.992c-1.5 0.918-2.382 0.264-1.975-1.435l2.226-9.303-7.269-6.218c-1.337-1.143-0.987-2.184 0.755-2.322l9.536-0.758 3.667-8.835c0.674-1.624 1.772-1.613 2.442 0l3.667 8.835 9.536 0.758c1.753 0.139 2.082 1.187 0.755 2.322l-7.269 6.218 2.226 9.303c0.409 1.71-0.485 2.347-1.975 1.435l-8.16-4.992z">
+        </path>
+      </symbol>
+      <symbol viewBox="0 0 32 32" id="backtop">
+        <g fill-rule="evenodd">
+          <circle cx="16" cy="16" r="15" stroke="#999" stroke-width="0.6" fill="none"/>
+          <line x1="16" y1="10" x2="16" y2="21" style="stroke:#999;stroke-width:0.8"/>
+          <line x1="10" y1="10" x2="22" y2="10" style="stroke:#999;stroke-width:0.8"/>
+          <path d="M9.5 18 L16 10 L22.5 18" style="stroke:#999;stroke-width:0.8;fill:none"/>
+          <text x="10" y="27"  style="font-size:6px;fill:#999;font-weight:700;">顶部</text>
+        </g>
+      </symbol>
     </defs>
   </svg>
 </template>
