@@ -63,6 +63,7 @@
 </template>
 
 <script>
+  import {mapState} from 'vuex'
   import {imgBaseUrl} from '../../config/env'
   import {loadMore} from './mixin'
   import {showBack, animate} from '../../config/mUtils'
@@ -95,7 +96,9 @@
       loadMore
     ],
     computed: {
-
+      ...mapState([
+        'latitude', 'longitude'
+      ])
     },
     methods: {
       async initData() {
