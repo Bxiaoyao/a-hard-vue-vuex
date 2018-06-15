@@ -130,3 +130,18 @@ export const shopList = (latitude, longitude, offset, restaurant_category_id = '
   }
   return fetch('/apis/shopping/restaurants', data)
 }
+
+/**
+ * 获取shop页面商铺详情
+ */
+export const shopDetails = (shopid, latitude, longitude) => fetch('/apis/shopping/restaurant/' + shopid , {
+  latitude,
+  longitude: longitude + '&extras[]=activities&extras[]=album&extras[]=license&extras[]=identification&extras[]=statistics'
+})
+
+/**
+ * 获取shop页面菜单列表
+ */
+export const foodMenu = restaurant_id => fetch('/apis/shopping/v2/menu', {
+  restaurant_id
+})

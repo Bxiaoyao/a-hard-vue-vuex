@@ -31,6 +31,9 @@
           <text x="10" y="27"  style="font-size:6px;fill:#999;font-weight:700;">顶部</text>
         </g>
       </symbol>
+      <symbol viewBox="0 0 14 14" id="arrow-left">
+        <path d="M0 0 L8 7 L0 14"  stroke="#fff" stroke-width="1" fill="none"/>
+      </symbol>      
     </defs>
   </svg>
 </template>

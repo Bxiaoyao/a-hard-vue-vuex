@@ -7,7 +7,7 @@
         </section>
         <hgroup class="shop_right">
           <header class="shop_detail_header">
-            <h4 :class="item.is_preminum ? 'premium' : ''" class="shop_title ellipsis">{{item.name}}</h4>
+            <h4 :class="item.is_premium ? 'premium' : ''" class="shop_title ellipsis">{{item.name}}</h4>
             <ul class="shop_detail_ul">
               <li v-for="item in item.supports" :key="item.id" class="supports">{{item.icon_name}}</li>
             </ul>
@@ -196,7 +196,7 @@
         @include font(0.65rem, 0.65rem, 'PingFangSC-Regular');
         font-weight: 700;
       }
-      .premium::befor{
+      .premium::before{
         content: '品牌';
         display: inline-block;
         font-size: 0.5rem;
@@ -234,7 +234,7 @@
           }
         }
         .order_section{
-          transform: scall(.8);
+          transform: scale(.8);
           margin-left: -0.2rem;
           @include sc(0.4rem, #666);
         }
